@@ -34,7 +34,7 @@ public class FirstPage extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
 
-        initializeToolbarAndRecyclerView();
+        initView();
         initProgressBar();
 
 
@@ -45,9 +45,9 @@ public class FirstPage extends AppCompatActivity
 
 
     /**
-     * Initializing Toolbar and RecyclerView
+     * Initializing Toolbar/ RecyclerView
      */
-    private void initializeToolbarAndRecyclerView() {
+    private void initView() {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -61,7 +61,7 @@ public class FirstPage extends AppCompatActivity
 
 
     /**
-     * Initializing progressbar programmatically
+     * Initializing progressbar
      * */
     private void initProgressBar() {
         progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleLarge);
@@ -80,7 +80,7 @@ public class FirstPage extends AppCompatActivity
 
 
     /**
-     * RecyclerItem click event listener
+     * RecyclerItem click event
      *
      * */
     private RecyclerItemClickListener recyclerItemClickListener = new RecyclerItemClickListener() {
@@ -125,7 +125,7 @@ public class FirstPage extends AppCompatActivity
     @Override
     public void onResponseFailure(Throwable throwable) {
         Toast.makeText(FirstPage.this,
-                "Something went wrong...Error message: " + throwable.getMessage(),
+                "Something went wrong..: " + throwable.getMessage(),
                 Toast.LENGTH_LONG).show();
     }
 
